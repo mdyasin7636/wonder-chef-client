@@ -24,15 +24,15 @@ const router = createBrowserRouter([
           element: <ChefDetails></ChefDetails>
         },
         {
-            path: '/blog',
+            path: 'blog',
             element: <Blog></Blog>
         },
         {
-          path: '/login',
+          path: 'login',
           element: <Login></Login>
         },
         {
-          path: '/register',
+          path: 'register',
           element: <Register></Register>
         } 
       ]

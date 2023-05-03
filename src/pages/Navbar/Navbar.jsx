@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
 
-  const {user} = useContext(AuthContext);
+  const {user, logOut, } = useContext(AuthContext);
 
   return (
     <nav className="bg-gray-800 py-4">
