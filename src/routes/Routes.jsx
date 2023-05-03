@@ -3,7 +3,6 @@ import HomeLayout from "../layouts/HomeLayout/HomeLayout";
 import Home from "../pages/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
-import LoginLayout from "../layouts/LoginLayout/LoginLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
@@ -21,7 +20,7 @@ const router = createBrowserRouter([
             loader: () => fetch('http://localhost:5000/')
         },
         {
-          path: '/chefDetails/:id',
+          path: 'chefDetails/:id',
           element: <ChefDetails></ChefDetails>
         },
         {

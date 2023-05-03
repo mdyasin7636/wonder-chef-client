@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const ChefDetails = () => {
-  const [chefInfo, setChefInfo] = useState([]);
+  const [chefInfo, setChefInfo] = useState({});
   const { chef_picture, chef_name, bio, experience, recipes_number, likes, rating, recipes } = chefInfo;
   console.log(chefInfo);
 
@@ -12,13 +13,10 @@ const ChefDetails = () => {
     fetch(`http://localhost:5000/${id}`)
       .then((res) => res.json())
       .then((data) => setChefInfo(data));
-  }, []);
+  }, [id]);
 
-  if(chefInfo){
-    
-  }
-  else{
-    
+  if(!chefInfo?.chef_name){
+    return <h1>No data</h1>
   }
 
   return (
@@ -45,6 +43,10 @@ const ChefDetails = () => {
         <div className="flex items-center mb-2">
           {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
           <p>Rating: {rating}</p>
+        </div>
+        <div className="flex items-center mb-2 ">
+          {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
+          <button>Favorite </button>
         </div>
       </div>
         </div>
