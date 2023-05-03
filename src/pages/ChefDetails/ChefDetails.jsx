@@ -10,7 +10,7 @@ const ChefDetails = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/${id}`)
+    fetch(`https://chef-recipe-hunter-server-mdyasin111.vercel.app/${id}`)
       .then((res) => res.json())
       .then((data) => setChefInfo(data));
   }, [id]);
