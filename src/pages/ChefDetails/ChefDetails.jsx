@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ErrorPage from "../ErrorPage/ErrorPage";
 
 const ChefDetails = () => {
   const [chefInfo, setChefInfo] = useState({});
@@ -16,7 +15,7 @@ const ChefDetails = () => {
   }, [id]);
 
   if(!chefInfo?.chef_name){
-    return <h1>No data</h1>
+    return <h1>No data found</h1>
   }
 
   return (
