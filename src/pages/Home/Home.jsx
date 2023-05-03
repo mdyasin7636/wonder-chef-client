@@ -14,7 +14,7 @@ const Home = () => {
       {/* banner section */}
       <div className="flex flex-col md:flex-row justify-center items-center bg-gray-800">
         <div className="text-center md:text-left mb-8 md:mb-0 md:mr-8 p-10 text-white">
-          <h1 className="text-4xl font-bold">Welcome to our Chef's Kitchen</h1>
+          <h1 className="text-4xl font-bold">Welcome to Wonder Chef</h1>
           <p className="mt-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
             mattis volutpat libero vitae iaculis. Nam euismod convallis enim,

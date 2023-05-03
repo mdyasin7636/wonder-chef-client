@@ -3,16 +3,8 @@ import { useParams } from "react-router-dom";
 
 const ChefDetails = () => {
   const [chefInfo, setChefInfo] = useState([]);
-  const {
-    chef_picture,
-    chef_name,
-    bio,
-    experience,
-    recipes_number,
-    likes,
-    rating,
-    recipes,
-  } = chefInfo;
+  const { chef_picture, chef_name, bio, experience, recipes_number, likes, rating, recipes } = chefInfo;
+  console.log(chefInfo);
 
   const { id } = useParams();
   console.log(id);
@@ -21,6 +13,13 @@ const ChefDetails = () => {
       .then((res) => res.json())
       .then((data) => setChefInfo(data));
   }, []);
+
+  if(chefInfo){
+    
+  }
+  else{
+    
+  }
 
   return (
     <div>
@@ -48,7 +47,27 @@ const ChefDetails = () => {
           <p>Rating: {rating}</p>
         </div>
       </div>
-    </div>
+        </div>
+
+        {/*  recipes container */}
+
+        <div>
+        <h3>Recipes</h3>
+
+        {chefInfo.recipes?.map((recipe, index) => (
+          <div key={index}>
+            <h4>{recipe.name}</h4>
+            <ul>
+              {recipe.ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+            <p>{recipe.cookingMethod}</p>
+          </div>
+        ))}    
+
+        </div>
+
     </div>
   );
 };
