@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ChefsCard = ({chefsInfo}) => {
 
-    const {chef_picture, chef_name, experience, recipes_number, likes} = chefsInfo
-
+    const {id, chef_picture, chef_name, experience, recipes_number, likes} = chefsInfo
+    const navigate = useNavigate();
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
@@ -14,9 +15,11 @@ const ChefsCard = ({chefsInfo}) => {
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">{chef_name}</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p>Experience: {experience}</p>
+            <p>Famous for: {recipes_number} Recipes</p>
+            <p>Likes: {likes}</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
+                 <button onClick={()=> navigate(`/chefDetails/${id}`)} className="btn btn-primary">View Recipes</button>
             </div>
           </div>
         </div>
