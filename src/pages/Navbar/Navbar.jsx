@@ -27,23 +27,25 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex">
-            <NavLink to="/" className={({isActive})=> isActive ? 'text-blue-500 ' : ''} >
-              <p className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >Home</p>
+            <NavLink to='/' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >
+            {({ isActive}) => (
+                <span className={isActive ? "text-blue-500" : ""}>Home</span>)}
             </NavLink>
-            <NavLink className={({isActive})=> isActive ? 'text-blue-500' : ''}  to="/blog">
-              <p className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blog</p>
+            <NavLink to='/blog' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >
+            {({ isActive}) => (
+                <span className={isActive ? "text-blue-500" : ""}>Blog</span>)}
             </NavLink>
                 {
-
                   user ? 
                       <div>
-                        <img className="h-10 rounded-full" src={user?.photoURL} data-tip={user?.displayName} />
+                        <img className="h-10 rounded-full" src={user?.photoURL} title={user?.displayName} />
                         <Tooltip/>
-                          
-
                       </div>
                  
-                : <Link to="/login" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" > Login </Link>
+                : <NavLink to='/login' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >
+                {({ isActive}) => (
+                    <span className={isActive ? "text-blue-500" : ""}>Login</span>)}
+                </NavLink>
 
                 }
                <button onClick={handleLogout} className="btn btn-primary">Log out</button>

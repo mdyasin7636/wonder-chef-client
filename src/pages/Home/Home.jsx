@@ -2,6 +2,7 @@ import React from "react";
 import chefImage from "../../assets/chefImage.jpg";
 import { useLoaderData } from "react-router-dom";
 import ChefsCard from "./ChefsCard";
+import LazyLoad from 'react-lazy-load';
 
 const Home = ({loading}) => {
 
@@ -23,11 +24,15 @@ const Home = ({loading}) => {
           </p>
         </div>
         <div className="w-full md:w-auto p-6">
+
+          <LazyLoad>
           <img
             src={chefImage}
             alt="Chef"
             className="w-full h-auto mx-auto md:mx-0 rounded-2xl "
           />
+          </LazyLoad>
+
         </div>
       </div>
       {/* chef section */}
@@ -82,7 +87,7 @@ const Home = ({loading}) => {
       {/* blogs section */}
       <div>
       <div className="text-center mt-6">
-          <h2 className="text-5xl">CHEF'S CHOICE</h2>
+          <h2 className="text-5xl">Chef's Choice</h2>
           <p className="text-lg">
             Fresh food & good moods
           </p>
