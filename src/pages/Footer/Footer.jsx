@@ -1,68 +1,41 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-    return (
+  return (
+    <div className="mt-8">
+      <footer className="footer p-14 bg-gray-800 text-white pl-32">
         <div>
-            <footer class="bg-gray-800 py-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between">
-    <div class="mb-4 md:mb-0">
-      <h3 class="text-lg font-bold text-gray-100 mb-2">Wonder Chef</h3>
-      <ul class="flex flex-col text-gray-400">
-        <li class="mb-2">
-          <a href="#" class="hover:text-gray-300">HOME</a>
-        </li>
-        <li class="mb-2">
-          <a href="#" class="hover:text-gray-300">BLOG</a>
-        </li>
-        <li class="mb-2">
-          <a href="#" class="hover:text-gray-300">MENUS</a>
-        </li>
-        <li class="mb-2">
-          <a href="#" class="hover:text-gray-300">ABOUT US</a>
-        </li>
-        <li class="mb-2">
-          <a href="#" class="hover:text-gray-300">OUR CHEFS</a>
-        </li>
-        <li>
-          <a href="#" class="hover:text-gray-300">CONTACT</a>
-        </li>
-      </ul>
-    </div>
-    <div class="text-gray-400 mb-4 md:mb-0">
-      <p class="mb-2">Contact Us:</p>
-      <p class="mb-2">123 Main St.</p>
-      <p class="mb-2">New York, NY 10001</p>
-
-      
-      <ul class="list-disc pl-4">
-        <li class="mb-2">info@chefwebsite.com</li>
-        <li class="mb-2">1-800-123-4567</li>
-      </ul>
-    </div>
-    <div class="text-gray-400 mb-4 md:mb-0">
-    <p class="mb-2">Find Us:</p>
-      <ul class="list-disc pl-4">
-        <li class="mb-2">Facebook</li>
-        <li class="mb-2">Twitter</li>
-        <li class="mb-2">Instagram</li>
-        <li>YouTube</li>
-      </ul>
-    </div>
-    <div class="text-gray-400 text-center">
-      <p>© 2023 Chef Website. All rights reserved.</p>
-      <p>
-        <a href="#" class="hover:text-gray-300">Terms &amp; Conditions</a>
-      </p>
-      <p>
-        <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-      </p>
-    </div>
-  </div>
-</footer>
-
-
+          <span className="footer-title">Wonder Chef</span>
+          <a className="link link-hover">Home</a>
+          <a className="link link-hover">About</a>
+          <a className="link link-hover">Blog</a>
         </div>
-    );
+        <div>
+          <span className="footer-title">Company</span>
+          <a className="link link-hover">About us</a>
+          <a className="link link-hover">Contact</a>
+          <a className="link link-hover">FAQ</a>
+        </div>
+        <div>
+          <span className="footer-title">Legal</span>
+          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Cookie policy</a>
+        </div>
+        <div>
+    <span className="footer-title">Social</span> 
+    <a className="link link-hover">Twitter</a> 
+    <a className="link link-hover">Instagram</a> 
+    <a className="link link-hover">Facebook</a>
+  </div> 
+      </footer>
+      <footer className="footer footer-center p-4  bg-gray-800 text-white">
+        <div>
+          <p>Copyright © 2023 - All right reserved by Wonder Chef</p>
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Footer;
