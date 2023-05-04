@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -16,12 +16,34 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
+            form.reset();
             console.log(loggedUser);
         })
         .catch(error => {
             console.log(error);
         })
+    }
 
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -65,8 +87,8 @@ const Login = () => {
           </form>
         </div>
         <div className='space-x-4 mt-4'>
-        <button className='btn btn-primary'>Login With Google</button>
-        <button className='btn btn-primary'>Login With Github</button>
+        <button onClick={handleGoogleSignIn} className='btn btn-primary'>Login With Google</button>
+        <button onClick={handleGithubSignIn} className='btn btn-primary'>Login With Github</button>
         </div>
       </div>
     </div>
