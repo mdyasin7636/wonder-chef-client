@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -7,6 +7,7 @@ const Login = () => {
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [error, setError] = useState('');
     console.log('login page location', location);
     const from = location.state?.from?.pathname || '/'
 
@@ -26,6 +27,7 @@ const Login = () => {
         })
         .catch(error => {
             console.log(error);
+            setError(error.message)
         })
     }
 
@@ -97,6 +99,7 @@ const Login = () => {
         <button onClick={handleGoogleSignIn} className='btn btn-primary'>Login With Google</button>
         <button onClick={handleGithubSignIn} className='btn btn-primary'>Login With Github</button>
         </div>
+        <p>{error}</p>
       </div>
     </div>
     );
