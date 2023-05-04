@@ -13,6 +13,7 @@ const Login = () => {
 
     const handleLogin = event => {
         event.preventDefault();
+        setError('')
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;

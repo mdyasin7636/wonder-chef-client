@@ -9,6 +9,7 @@ const Register = () => {
 
   const handleRegister = event => {
     event.preventDefault();
+    setError('')
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -22,6 +23,7 @@ const Register = () => {
       updateUserProfile(name, photo)
         .then(() => {
           console.log('User profile updated successfully');
+          form.reset();
         })
         .catch(error => {
           console.log('Error updating user profile:', error);

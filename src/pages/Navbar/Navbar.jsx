@@ -7,15 +7,7 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
 
-  const {user, logOut, } = useContext(AuthContext);
-
-  // console.log(user?.displayName);
-
-  const handleLogout = () => {
-    logOut()
-    .then()
-    .catch(error => console.log(error))
-  }
+  const {user} = useContext(AuthContext);
 
   return (
     <nav className="bg-gray-800 py-4">
@@ -48,8 +40,6 @@ const Navbar = () => {
                 </NavLink>
 
                 }
-               <button onClick={handleLogout} className="btn btn-primary">Log out</button>
-
           </div>
         </div>
       </div>
