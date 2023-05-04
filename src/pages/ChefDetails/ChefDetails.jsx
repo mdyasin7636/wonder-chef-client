@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const ChefDetails = () => {
+const ChefDetails = ({loading}) => {
   const [chefInfo, setChefInfo] = useState({});
   const { chef_picture, chef_name, bio, experience, recipes_number, likes, rating, recipes } = chefInfo;
   console.log(chefInfo);
+  
+  if(loading) {
+    return <progress className="progress w-56"></progress>
+}
 
   const { id } = useParams();
   console.log(id);
@@ -15,7 +19,7 @@ const ChefDetails = () => {
   }, [id]);
 
   if(!chefInfo?.chef_name){
-    return <h1>No data found</h1>
+    return <h1>No data found</h1> 
   }
 
   return (

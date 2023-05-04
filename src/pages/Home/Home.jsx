@@ -3,7 +3,12 @@ import chefImage from "../../assets/chefImage.jpg";
 import { useLoaderData } from "react-router-dom";
 import ChefsCard from "./ChefsCard";
 
-const Home = () => {
+const Home = ({loading}) => {
+
+  if(loading) {
+    return <progress className="progress w-56"></progress>
+}
+
   const chefs = useLoaderData();
   console.log(chefs);
 
@@ -37,59 +42,40 @@ const Home = () => {
       {/* review section */}
       <div>
         <div className="text-center mt-6">
-          <h2 className="text-5xl">What People Are Saying</h2>
-          <p className="text-lg">
-            Demoralized by the charms of pleasure of the moment so blinded
-            except to some advantage.
-          </p>
+          <h2 className="text-3xl font-bold ">Review's From Top Michelin Star Chefs</h2>
+          
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-6 px-6">
           <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                alt="Movie"
-              />
+            <figure className="mt-2 ml-5">
+              <img className="rounded-xl" src="https://i.ibb.co/PCWVxvV/gordon-ramsay.jpg" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
+              <p>"The foie gras terrine was a true masterpiece. The foie gras was perfectly cooked, with a silky texture and rich, buttery flavor. The accompanying fig compote added a lovely sweetness that balanced out the richness of the foie gras. It was a truly decadent dish that exemplified the best of French cuisine." - Gordon Ramsay</p>
             </div>
           </div>
           <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                alt="Movie"
-              />
+            <figure className="mt-2 ml-5">
+              <img className="rounded-xl"src="https://i.ibb.co/x8rBy98/Sanjeev-Kapoor.jpg" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
+              <p>"The duck confit was absolutely delicious. The duck was tender and flavorful, with crispy skin that was perfectly rendered. The accompanying lentils and bacon added a nice earthiness and smokiness that complemented the duck really well. It was a classic French dish executed to perfection." - Sanjeev Kapoor</p>
             </div>
           </div>
           <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                alt="Movie"
-              />
+            <figure className="mt-2 ml-5">
+              <img className="rounded-xl" src="https://i.ibb.co/NjDQ3zm/Peter-Gilmore.jpg" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
+              <p>"The bouillabaisse was outstanding. The broth was rich and flavorful, with a complex mix of herbs and spices that really elevated the dish. The addition of perfectly cooked seafood made it a truly luxurious dish. It was a wonderful representation of the best of Provençal cuisine." - Peter Gilmore</p>
             </div>
           </div>
           <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                alt="Movie"
-              />
+            <figure className="mt-2 ml-5">
+              <img  className="rounded-xl" src="https://i.ibb.co/wC7KNtP/Yoshihiro-Murata.jpg" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">New movie is released!</h2>
-              <p>Click the button to watch on Jetflix app.</p>
+              <p>"The crème brûlée was the best I've ever had. The custard was silky and smooth, with a lovely vanilla flavor that wasn't too overpowering. The caramelized sugar on top was perfectly done, with just the right amount of crackle. It was a perfect ending to a wonderful French meal." - Yoshihiro Murata</p>
             </div>
           </div>
         </div>
@@ -102,34 +88,25 @@ const Home = () => {
           <p className="text-lg">
             Fresh food & good moods
           </p>
-          <p className="text-lg">
-            Demoralized by the charms of pleasure of the moment so blinded
-            except to some advantage.
-          </p>
+          
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-6 ">
         <div className="card w-96 glass">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!"/></figure>
+  <figure><img src="https://i.ibb.co/TwZz9bc/Tuna-Nicoise.jpg"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    <p>How to park your car at your garage?</p>
-    
+    <h2 className="card-title">Tuna Nicoise</h2>
   </div>
         </div>
         <div className="card w-96 glass">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!"/></figure>
+  <figure><img src="https://i.ibb.co/YkmpyDt/Steak-Diane.jpg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    <p>How to park your car at your garage?</p>
-    
+    <h2 className="card-title">Steak Diane</h2>
   </div>
         </div>
         <div className="card w-96 glass">
-  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!"/></figure>
+  <figure><img src="https://i.ibb.co/HTWRmN0/Beef-Bourgugnon.jpg" alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">Life hack</h2>
-    <p>How to park your car at your garage?</p>
-    
+    <h2 className="card-title">Beef Bourguignon</h2>
   </div>
         </div>
         </div>
