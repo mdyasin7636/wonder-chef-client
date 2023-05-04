@@ -38,25 +38,20 @@ const ChefDetails = ({loading}) => {
       </div>
       <div className="flex flex-col justify-center pr-32">
         <h1 className="text-3xl font-bold mb-4">Name: {chef_name}</h1>
-        <p className="text-gray-600 mb-2">Bio: {bio}</p>
+        <p className="font-semibold mb-2">Bio: {bio}</p>
         <div className="flex items-center mb-2">
-          {/* <i className="fas fa-heart text-red-500 mr-2"></i> */}
-          <p>Experience: {experience}</p>
+          <p className="font-semibold mb-2">Experience: {experience}</p>
         </div>
         <div className="flex items-center mb-2">
-          {/* <i className="fas fa-utensils text-green-500 mr-2"></i> */}
-          <p>Famous for: {recipes_number} Recipes</p>
+          <p className="font-semibold mb-2">Famous for: {recipes_number} Recipes</p>
         </div>
         <div className="flex items-center mb-2">
-          {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
-          <p>Likes: {likes}</p>
+          <p className="font-semibold mb-2">Likes: {likes}</p>
         </div>
         <div className="flex items-center mb-2">
-          {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
-          <p>Rating: {rating}</p>
+          <p className="font-semibold mb-2">Rating: {rating} Star</p>
         </div>
         <div className="flex items-center mb-2 ">
-          {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
           <button className="btn btn-primary" disabled={isFavorite} onClick={notify}>Favorite </button>
           <ToastContainer />
         </div>
@@ -66,19 +61,19 @@ const ChefDetails = ({loading}) => {
         {/*  recipes container */}
 
         <div>
-        <h3 className="text-center text-4xl mt-4 mb-4">Recipes</h3>
+        <h3 className="text-center font-bold text-5xl mt-10 mb-10">Recipes</h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-6 ">
   {chefInfo.recipes?.map((recipe, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden ">
+    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden border border-stone-900">
       <div className="p-4">
-        <h4 className="text-lg font-medium">Name: {recipe.name}</h4>
-        <ul className="my-2"> Ingredients:
+        <h4 className="text-lg font-medium"> Recipe Name: {recipe.name}</h4>
+        <ul className="my-4 font-semibold"> Ingredients:
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index} className="text-gray-700"> {ingredient}</li>
           ))}
         </ul>
-        <p className="text-gray-600 ">CookingMethod: {recipe.cookingMethod}</p>
+        <p className="font-semibold">Cooking Method: {recipe.cookingMethod}</p>
       </div>
     </div>
   ))}
