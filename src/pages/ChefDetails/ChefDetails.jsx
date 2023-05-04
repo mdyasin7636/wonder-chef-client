@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefDetails = ({loading}) => {
   const [chefInfo, setChefInfo] = useState({});
   const { chef_picture, chef_name, bio, experience, recipes_number, likes, rating, recipes } = chefInfo;
   console.log(chefInfo);
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  const notify = () => {
+    toast("Wow! This is now Your Favorite Recipe");
+    setIsFavorite(true); 
+  }
   
   if(loading) {
     return <progress className="progress w-56"></progress>
@@ -49,7 +57,8 @@ const ChefDetails = ({loading}) => {
         </div>
         <div className="flex items-center mb-2 ">
           {/* <i className="fas fa-clock text-yellow-500 mr-2"></i> */}
-          <button>Favorite </button>
+          <button className="btn btn-primary" disabled={isFavorite} onClick={notify}>Favorite </button>
+          <ToastContainer />
         </div>
       </div>
         </div>
@@ -59,9 +68,9 @@ const ChefDetails = ({loading}) => {
         <div>
         <h3 className="text-center text-4xl mt-4 mb-4">Recipes</h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-6">
   {chefInfo.recipes?.map((recipe, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden ">
       <div className="p-4">
         <h4 className="text-lg font-medium">Name: {recipe.name}</h4>
         <ul className="my-2"> Ingredients:

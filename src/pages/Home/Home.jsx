@@ -16,12 +16,10 @@ const Home = ({loading}) => {
     <div>
       {/* banner section */}
       <div className="flex flex-col md:flex-row justify-center items-center bg-gray-800">
-        <div className="text-center md:text-left mb-8 md:mb-0 md:mr-8 p-10 text-white">
-          <h1 className="text-4xl font-bold">Welcome to Wonder Chef</h1>
+        <div className="text-center md:text-left mb-8 md:mb-0 md:mr-8 p-8 text-white">
+          <h1 className="text-4xl font-bold">Hey There, Foodie!</h1>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            mattis volutpat libero vitae iaculis. Nam euismod convallis enim,
-            sed molestie nisl faucibus et.
+          Discover the Art of French Cuisine with Our Top French Chefs - A Celebration of the Finest Culinary Talent and Traditions from Across France. From Classic French Dishes to Modern Innovations, our Chefs will Take You on a Gastronomic Journey Unlike Any Other.
           </p>
         </div>
         <div className="w-full md:w-auto p-6">
@@ -98,13 +96,13 @@ const Home = ({loading}) => {
   </div>
         </div>
         <div className="card w-96 glass">
-  <figure><img src="https://i.ibb.co/YkmpyDt/Steak-Diane.jpg" alt="car!"/></figure>
+  <figure><img src="https://i.ibb.co/YkmpyDt/Steak-Diane.jpg"/></figure>
   <div className="card-body">
     <h2 className="card-title">Steak Diane</h2>
   </div>
         </div>
         <div className="card w-96 glass">
-  <figure><img src="https://i.ibb.co/HTWRmN0/Beef-Bourgugnon.jpg" alt="car!"/></figure>
+  <figure><img src="https://i.ibb.co/HTWRmN0/Beef-Bourgugnon.jpg"/></figure>
   <div className="card-body">
     <h2 className="card-title">Beef Bourguignon</h2>
   </div>

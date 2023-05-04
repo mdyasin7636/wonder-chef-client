@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-tooltip/dist/react-tooltip.css";
@@ -27,12 +27,12 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex">
-            <Link to="/" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >
-              Home
-            </Link>
-            <Link to="/blog" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >
-              Blog
-            </Link>
+            <NavLink to="/" className={({isActive})=> isActive ? 'text-blue-500 ' : ''} >
+              <p className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" >Home</p>
+            </NavLink>
+            <NavLink className={({isActive})=> isActive ? 'text-blue-500' : ''}  to="/blog">
+              <p className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Blog</p>
+            </NavLink>
                 {
 
                   user ? 
