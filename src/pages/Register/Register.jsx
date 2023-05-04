@@ -27,30 +27,70 @@ const Register = () => {
   }
 
   return (
-    <div className="text-center">
-      <h2>Register here</h2>
-      <form onSubmit={handleRegister} className="border rounded border-teal-500 m-20 p-20">
-        <div>
-          <p>Name:</p>
-          <input type="text" name="name" className="bg-gray-600 text-zinc-50"/>
+      <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold">Register Now!</h1>
         </div>
-        <div>
-          <p>Email:</p>
-          <input type="email" name="email" className="bg-gray-600 text-zinc-50" required />
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleRegister} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                name="photo"
+                placeholder="photo url"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+              <label className="label">
+              Already Have an Account? <Link className='link' to="/login">Login</Link>
+              </label>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Register</button>
+            </div>
+          </form>
         </div>
-        <div>
-          <p>Photo URL:</p>
-          <input type="text" name="photo" className="bg-gray-600 text-zinc-50" />
-        </div>
-        <div>
-          <p>Password:</p>
-          <input type="password" name="password" className="bg-gray-600 text-zinc-50" required />
-        </div>
-        <button className="btn btn-primary mt-2">Register</button>
-        <p>
-            Already Have an Account? <Link className='link' to="/login">Login</Link>
-        </p>
-      </form>
+      </div>
     </div>
   );
 };
