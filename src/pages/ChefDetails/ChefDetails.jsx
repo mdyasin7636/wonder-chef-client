@@ -53,19 +53,24 @@ const ChefDetails = () => {
         {/*  recipes container */}
 
         <div>
-        <h3>Recipes</h3>
+        <h3 className="text-center text-4xl mt-4 mb-4">Recipes</h3>
 
-        {chefInfo.recipes?.map((recipe, index) => (
-          <div key={index}>
-            <h4>{recipe.name}</h4>
-            <ul>
-              {recipe.ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-            <p>{recipe.cookingMethod}</p>
-          </div>
-        ))}    
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {chefInfo.recipes?.map((recipe, index) => (
+    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="p-4">
+        <h4 className="text-lg font-medium">Name: {recipe.name}</h4>
+        <ul className="my-2"> Ingredients:
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index} className="text-gray-700"> {ingredient}</li>
+          ))}
+        </ul>
+        <p className="text-gray-600 ">CookingMethod: {recipe.cookingMethod}</p>
+      </div>
+    </div>
+  ))}
+</div>
+  
 
         </div>
 
