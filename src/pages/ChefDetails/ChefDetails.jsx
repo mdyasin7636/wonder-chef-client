@@ -64,7 +64,7 @@ const ChefDetails = ({ loading }) => {
             Rating: <span className="font-semibold">{rating} Star</span>
           </p>
           <button
-            class="btn btn-primary mt-4"
+            class="btn btn-outline mt-4"
             disabled={isFavorite}
             onClick={notify}>
             Favorite
@@ -85,10 +85,10 @@ const ChefDetails = ({ loading }) => {
               className="bg-white rounded-lg shadow-lg overflow-hidden border-double  border-4 border-gray-800">
               <div className="p-4">
                 <h4 className="text-lg font-bold"> {recipe.name}</h4>
-                <ul className="my-4 font-bold">
+                <ul className="my-4 font-bold ">
                   Ingredients:
                   {recipe.ingredients.map((ingredient, index) => (
-                    <li key={index} className="font-semibold mt-1">
+                    <li key={index} className="font-semibold ml-5 mt-1 list-disc">
                       {ingredient}
                     </li>
                   ))}

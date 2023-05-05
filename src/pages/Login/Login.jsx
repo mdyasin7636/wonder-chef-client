@@ -92,13 +92,13 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-outline">Login</button>
             </div>
           </form>
         </div>
         <div className='space-x-4 mt-4'>
-        <button onClick={handleGoogleSignIn} className='btn btn-primary'>Login With Google</button>
-        <button onClick={handleGithubSignIn} className='btn btn-primary'>Login With Github</button>
+        <button onClick={handleGoogleSignIn} className='btn btn-outline'>Login With Google</button>
+        <button onClick={handleGithubSignIn} className='btn btn-outline'>Login With Github</button>
         </div>
         <p>{error}</p>
       </div>

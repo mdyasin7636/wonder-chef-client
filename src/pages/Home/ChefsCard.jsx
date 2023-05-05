@@ -19,7 +19,7 @@ const ChefsCard = ({chefsInfo}) => {
             <p className='font-bold'>Famous For: <span className='font-semibold'> {recipes_number} Recipes</span></p>
             <p className='font-bold'>Liked By: <span className='font-semibold'> {likes} People</span></p>
             <div className="card-actions">
-                 <button onClick={()=> navigate(`/chefDetails/${id}`)} className="btn btn-primary">View Recipes</button>
+                 <button onClick={()=> navigate(`/chefDetails/${id}`)} className="btn btn-outline">View Recipes</button>
             </div>
           </div>
         </div>
