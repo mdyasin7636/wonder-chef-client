@@ -82,11 +82,11 @@ const ChefDetails = ({ loading }) => {
                     </li>
                   ))}
                 </ul>
-                <p className="font-bold">Cooking Method:</p>
-                <p className="font-semibold mt-2">{recipe.cookingMethod}</p>
                 <p class="font-bold mb-2">
             Rating: <span className="font-semibold">{recipe.rating} Star</span>
-          </p>
+              </p>
+                <p className="font-bold">Cooking Method:</p>
+                <p className="font-semibold mt-2">{recipe.cookingMethod}</p>
                 <button
             class="btn btn-outline mt-4"
             disabled={isFavorite}
