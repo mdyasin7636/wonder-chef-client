@@ -14,10 +14,10 @@ const ChefsCard = ({chefsInfo}) => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title font-bold">{chef_name}</h2>
-            <p className='font-semibold'>Experience: {experience}</p>
-            <p className='font-semibold'>Famous For: {recipes_number} Recipes</p>
-            <p className='font-semibold'>Likes: {likes}</p>
+            <h2 className="card-title font-bold text-2xl">{chef_name}</h2>
+            <p className='font-bold'>Experience: <span className='font-semibold'>{experience}</span></p>
+            <p className='font-bold'>Famous For: <span className='font-semibold'> {recipes_number} Recipes</span></p>
+            <p className='font-bold'>Liked By: <span className='font-semibold'> {likes} People</span></p>
             <div className="card-actions">
                  <button onClick={()=> navigate(`/chefDetails/${id}`)} className="btn btn-primary">View Recipes</button>
             </div>

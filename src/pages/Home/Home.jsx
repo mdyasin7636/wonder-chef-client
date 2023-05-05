@@ -31,7 +31,7 @@ const chefs = useLoaderData();
           <img
             src={chefImage}
             alt="Chef"
-            className="w-full h-auto mx-auto md:mx-0 rounded-2xl "
+            className="w-full h-auto mx-auto md:mx-0 rounded-2xl"
           />
           </LazyLoad>
 
@@ -94,7 +94,7 @@ const chefs = useLoaderData();
       <div className="text-center mt-16">
           <h2 className="text-5xl font-bold">Chefs Choice</h2>
           <p className="text-lg mt-4 font-semibold">
-            Fresh food & good moods
+            Fresh Food & Good Moods
           </p>
           
         </div>

@@ -19,11 +19,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex">
-            <NavLink to='/' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-bold" >
+            <NavLink to='/' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold" >
             {({ isActive}) => (
                 <span className={isActive ? "text-blue-500" : ""}>Home</span>)}
             </NavLink>
-            <NavLink to='/blog' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-bold" >
+            <NavLink to='/blog' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold" >
             {({ isActive}) => (
                 <span className={isActive ? "text-blue-500" : ""}>Blog</span>)}
             </NavLink>
@@ -34,7 +34,7 @@ const Navbar = () => {
                         <Tooltip/>
                       </div>
                  
-                : <NavLink to='/login' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-bold" >
+                : <NavLink to='/login' className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold" >
                 {({ isActive}) => (
                     <span className={isActive ? "text-blue-500" : ""}>Login</span>)}
                 </NavLink>
