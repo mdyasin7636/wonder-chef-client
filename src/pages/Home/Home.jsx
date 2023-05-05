@@ -38,10 +38,13 @@ const chefs = useLoaderData();
         </div>
       </div>
       {/* chef section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-1 md:mx-12 mt-10">
+      <div>
+        <h2 className="font-bold text-5xl text-center mt-10">Our Chefs</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-1 md:mx-12 mt-6">
         {chefs.map((chefsInfo) => (
           <ChefsCard key={chefsInfo.id} chefsInfo={chefsInfo}></ChefsCard>
         ))}
+      </div>
       </div>
 
       {/* review section */}
@@ -89,7 +92,7 @@ const chefs = useLoaderData();
       {/* blogs section */}
       <div>
       <div className="text-center mt-16">
-          <h2 className="text-5xl font-bold">Chef's Choice</h2>
+          <h2 className="text-5xl font-bold">Chefs Choice</h2>
           <p className="text-lg mt-4 font-semibold">
             Fresh food & good moods
           </p>

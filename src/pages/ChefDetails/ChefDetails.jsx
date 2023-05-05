@@ -78,10 +78,7 @@ const ChefDetails = ({loading}) => {
     </div>
   ))}
 </div>
-  
-
         </div>
-
     </div>
   );
 };
