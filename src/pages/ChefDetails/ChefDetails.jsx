@@ -11,8 +11,7 @@ const ChefDetails = ({ loading }) => {
     bio,
     experience,
     recipes_number,
-    likes,
-    rating
+    likes
   } = chefInfo;
   console.log(chefInfo);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -86,7 +85,7 @@ const ChefDetails = ({ loading }) => {
                 <p className="font-bold">Cooking Method:</p>
                 <p className="font-semibold mt-2">{recipe.cookingMethod}</p>
                 <p class="font-bold mb-2">
-            Rating: <span className="font-semibold">{rating} Star</span>
+            Rating: <span className="font-semibold">{recipe.rating} Star</span>
           </p>
                 <button
             class="btn btn-outline mt-4"
