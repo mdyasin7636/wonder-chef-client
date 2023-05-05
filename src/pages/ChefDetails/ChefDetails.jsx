@@ -60,16 +60,6 @@ const ChefDetails = ({ loading }) => {
           <p class="font-bold mb-2">
             Likes: <span className="font-semibold">{likes}</span>
           </p>
-          <p class="font-bold mb-2">
-            Rating: <span className="font-semibold">{rating} Star</span>
-          </p>
-          <button
-            class="btn btn-outline mt-4"
-            disabled={isFavorite}
-            onClick={notify}>
-            Favorite
-          </button>
-          <ToastContainer/>
         </div>
       </div>
 
@@ -95,6 +85,16 @@ const ChefDetails = ({ loading }) => {
                 </ul>
                 <p className="font-bold">Cooking Method:</p>
                 <p className="font-semibold mt-2">{recipe.cookingMethod}</p>
+                <p class="font-bold mb-2">
+            Rating: <span className="font-semibold">{rating} Star</span>
+          </p>
+                <button
+            class="btn btn-outline mt-4"
+            disabled={isFavorite}
+            onClick={notify}>
+            Favorite
+          </button>
+          <ToastContainer/>
               </div>
             </div>
           ))}
