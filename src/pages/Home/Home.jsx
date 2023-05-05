@@ -1,16 +1,18 @@
 import React from "react";
 import chefImage from "../../assets/chefImage.jpg";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import ChefsCard from "./ChefsCard";
 import LazyLoad from 'react-lazy-load';
 
-const Home = ({loading}) => {
+const Home = () => {
 
-  if(loading) {
+  const navigation = useNavigation();
+  console.log(navigation.state);
+  if(navigation.state === 'loading'){
     return <progress className="progress w-56"></progress>
-}
+  }
 
-  const chefs = useLoaderData();
+const chefs = useLoaderData();
   console.log(chefs);
 
   return (
