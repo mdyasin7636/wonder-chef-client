@@ -53,11 +53,10 @@ const ChefDetails = ({ loading }) => {
             Experience: <span className="font-semibold">{experience}</span>
           </p>
           <p class="font-bold mb-2">
-            Famous for:
-            <span className="font-semibold">{recipes_number} Recipes</span>
+            Famous for: <span className="font-semibold"> {recipes_number} Recipes</span>
           </p>
           <p class="font-bold mb-2">
-            Likes: <span className="font-semibold">{likes}</span>
+            Liked By: <span className="font-semibold">{likes} People</span>
           </p>
         </div>
       </div>
