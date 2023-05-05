@@ -16,7 +16,7 @@ const ChefDetails = ({loading}) => {
   
   if(loading) {
     return <progress className="progress w-56"></progress>
-}
+  }
 
   const { id } = useParams();
   console.log(id);
@@ -26,48 +26,40 @@ const ChefDetails = ({loading}) => {
       .then((data) => setChefInfo(data));
   }, [id]);
 
+  
   if(!chefInfo?.chef_name){
-    return <h1>No data found</h1> 
+    return <div>No Data Found</div>
   }
 
   return (
     <div>
-        <div className="flex items-center justify-center bg-gray-100 p-8">
-      <div className="flex items-center">
-        <img src={chef_picture} alt="Chef" className="w-3/4 rounded-full mr-8" />
-      </div>
-      <div className="flex flex-col justify-center pr-32">
-        <h1 className="text-3xl font-bold mb-4">Name: {chef_name}</h1>
-        <p className="font-semibold mb-2">Bio: {bio}</p>
-        <div className="flex items-center mb-2">
-          <p className="font-semibold mb-2">Experience: {experience}</p>
-        </div>
-        <div className="flex items-center mb-2">
-          <p className="font-semibold mb-2">Famous for: {recipes_number} Recipes</p>
-        </div>
-        <div className="flex items-center mb-2">
-          <p className="font-semibold mb-2">Likes: {likes}</p>
-        </div>
-        <div className="flex items-center mb-2">
-          <p className="font-semibold mb-2">Rating: {rating} Star</p>
-        </div>
-        <div className="flex items-center mb-2 ">
-          <button className="btn btn-primary" disabled={isFavorite} onClick={notify}>Favorite </button>
-          <ToastContainer />
-        </div>
-      </div>
-        </div>
+        {/* chef section */}
+<div class="grid grid-cols-2 items-center justify-items-center">
+  <div class="flex justify-center mt-12">
+    <img src={chef_picture} class="rounded-full w-3/6 ml-40" />
+  </div>
+  <div class="p-10">
+    <p class="text-3xl font-bold mb-4">{chef_name}</p>
+    <p className="font-bold mb-2 pr-16">Bio: <span className="font-normal">{bio}</span></p>
+    <p class="font-bold mb-2">Experience: <span className="font-normal">{experience}</span></p>
+    <p class="font-bold mb-2">Famous for: <span className="font-normal">{recipes_number} Recipes</span></p>
+    <p class="font-bold mb-2">Likes: <span className="font-normal">{likes}</span></p>
+    <p class="font-bold mb-2">Rating: <span className="font-normal">{rating} Star</span></p>
+    <button class="btn btn-primary mt-4" disabled={isFavorite} onClick={notify}> Favorite </button>
+    <ToastContainer />
+  </div>
+</div>
 
-        {/*  recipes container */}
+        {/*  recipes section */}
 
         <div>
         <h3 className="text-center font-bold text-5xl mt-10 mb-10">Recipes</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-6 ">
   {chefInfo.recipes?.map((recipe, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden border border-stone-900">
+    <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden border-dashed border-2 border-gray-800">
       <div className="p-4">
-        <h4 className="text-lg font-medium"> Recipe Name: {recipe.name}</h4>
+        <h4 className="text-lg font-medium"> {recipe.name}</h4>
         <ul className="my-4 font-semibold"> Ingredients:
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index} className="text-gray-700"> {ingredient}</li>
