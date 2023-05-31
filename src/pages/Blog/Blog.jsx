@@ -27,7 +27,7 @@ const Blog = () => {
             components where the value of the form elements is managed by the
             React component. Controlled components are more powerful but also
             more complex to implement, while uncontrolled components are simpler
-            to implement but have fewer features
+            to implement but have fewer features.
           </p>
         </div>
         <div className="mb-4 border p-4 rounded-md">
