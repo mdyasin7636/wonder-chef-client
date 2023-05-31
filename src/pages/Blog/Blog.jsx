@@ -4,7 +4,7 @@ import { jsPDF } from "jspdf";
 const Blog = () => {
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
-    doc.text("Q: What is the differences between uncontrolled and controlled components? Ans: Uncontrolled components in React are components where the form data is handled by the DOM itself, whereas controlled components are components where the value of the form elements is managed by the React component. Controlled components are more powerful but also more complex to implement, while uncontrolled components are simpler to implement but have fewer features.", 10, 10);
+    doc.text("Q: What is the differences between uncontrolled and controlled components? Ans: Uncontrolled components in React are components where the form data is handled by the DOM itself", 10, 10);
     doc.save("a4.pdf");
   };
 
@@ -27,7 +27,7 @@ const Blog = () => {
             components where the value of the form elements is managed by the
             React component. Controlled components are more powerful but also
             more complex to implement, while uncontrolled components are simpler
-            to implement but have fewer features.
+            to implement but have fewer features
           </p>
         </div>
         <div className="mb-4 border p-4 rounded-md">
